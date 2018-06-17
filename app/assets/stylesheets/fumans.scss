@@ -1,0 +1,64 @@
+// Place all the styles related to the fumans controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: rgba(243,243,243,1) !important;
+}
+#form {
+}
+.shadow1 {
+border:1px solid #c6e2ff;
+box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 4px 2px;
+-webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 4px 2px;
+-moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 4px 2px;
+}
+#text {
+  border:#c6e2ff 1px solid;
+  height:100px;
+  color:#0278AE;
+  padding: 10px;
+  width:100%;
+  background-color: #fff;
+}
+#name {
+  border:#c6e2ff 1px solid;
+  height:30px;
+  color:#c6e2ff;
+  padding: 10px;
+  width:100%;
+  font-size: 10px;
+  background-color: #fff;
+}
+.fuman {
+  padding: 10px;
+  border:1px solid #c6e2ff;
+  margin:10px 0;
+  background-color: #fff;
+}
+.input {
+  margin-top:100px;
+  padding:10px;
+}
+.content {
+  color:#0278AE;
+}
+.name {
+  color:#555;
+  font-size: 12px;
+}
+input, button, textarea, select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+input, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}

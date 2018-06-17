@@ -1,0 +1,2 @@
+class Fuman < ApplicationRecord
+end
