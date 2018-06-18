@@ -5,8 +5,8 @@
     </div>
     <div class="col-md-6 offset-md-3 input col-sm-12">
       <%= form_for(@fuman, url: fumans_path(@fuman), html: {method: "post"}) do |f| %>
-        <%= f.text_area :content, id:"text" %>
-        <%= f.text_field :name,value:"",placeholder:"Annonymous", id:"name" %>
+        <%= f.text_field :content, id:"text",data:{behavior:"room_speaker"} %>
+        <!-- <%= f.text_field :name,value:"",placeholder:"Annonymous", id:"name" %> -->
         <%= f.submit "投稿", class:"btn btn-primary btn-sm",style:"display:hidden;width:100%;background-color:#0278AE;margin-top:10px;" %>
       <% end %>
     </div>
