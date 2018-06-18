@@ -1,14 +1,23 @@
 
 
 <% @fumans.each do |fuman| %>
-  <div class="col-md-4 col-sm-12">
+  <div class="col-md-6 offset-md-3 col-sm-12">
     <div class="fuman shadow1">
-      <div class="content">
-        <%= fuman.content %>
-      </div>
-      <div class="name">
-        <%= fuman.name %>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="content">
+            <%= fuman.content %>
+          </div>
+          <div class="name">
+            <%= fuman.name %>
+          </div>
+        </div>
+        <div class=" col-md-3 offset-md-1">
+          <i class="far fa-thumbs-up fa-fw faa-wrench animated-hover"></i><%=fuman.like%>
+          <i class="far fa-thumbs-down fa-fw faa-wrench animated-hover"></i><%=fuman.dislike%>
+          <i class="fas fa-reply fa-fw faa-bounce animated-hover my-gray fa-lg"></i>
+        </div>
+        </div>
       </div>
     </div>
-  </div>
 <% end %>

@@ -14,8 +14,10 @@ ActiveRecord::Schema.define(version: 2018_06_17_123331) do
 
   create_table "fumen", force: :cascade do |t|
     t.string "content", null: false
-    t.integer "like"
+    t.integer "like", default: 0
+    t.integer "dislike", default: 0
     t.string "name", default: "annonymous"
+    t.string "to_whom", default: "World"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
