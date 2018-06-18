@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 offset-md-3 input">
+    <div class="col-md-6 offset-md-3 col-sm-12 title">
+      Wiino
+    </div>
+    <div class="col-md-6 offset-md-3 input col-sm-12">
       <%= form_for(@fuman, url: fumans_path(@fuman), html: {method: "post"}) do |f| %>
         <%= f.text_area :content, id:"text" %>
         <%= f.text_field :name,value:"",placeholder:"Annonymous", id:"name" %>
