@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <div class = "container-fluid">
+      <div class ="row" >
+        <div class="cover-text">
+          <h1>Wiino</h1>
+        </div>
+      </div>
+    <%= form_for(@fuman, url: fumans_path(@fuman), html: {method: "post"}) do |f| %>
+    <div class ="row" >
+      <div class="col-md-6 offset-md-3 input col-sm-12 ">
+        <div class="row">
+          <%= f.text_field :name,value:"",placeholder:"Annonymous", class:"col-md-3 offset-md-1",id:"name" %>
+          <i class="fas fa-angle-double-right fa-2x fa-fw faa-passing  my-white animated col-md-2 offset-md-1"></i>
+          <%= f.text_field :to_whom, id:"to_whom",class:"col-md-3 offset-md-1",placeholder:"World",value:"" %>
+        </div>
+      </div>
+      <div class="col-md-6 offset-md-3 input col-sm-12">
+          <%= f.text_area :content, id:"text",placeholder:"Your wish & request.",value:"" %>
+          <%= f.submit "投稿", class:"btn btn-primary btn-sm",style:"display:hidden;width:100%;background-color:#0278AE;margin-top:10px;" %>
+        <% end %>
+    </div>
+  </div>
+</div>

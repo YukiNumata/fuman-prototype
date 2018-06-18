@@ -29,6 +29,15 @@ box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 4px 2px;
   font-size: 10px;
   background-color: #fff;
 }
+#to_whom {
+  border:#c6e2ff 1px solid;
+  height:30px;
+  color:#c6e2ff;
+  padding: 10px;
+  width:100%;
+  font-size: 10px;
+  background-color: #fff;
+}
 .fuman {
   padding: 10px;
   border:1px solid #c6e2ff;
@@ -36,7 +45,7 @@ box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 4px 2px;
   background-color: #fff;
 }
 .input {
-  margin-top:20px;
+  margin:20px;
   padding:10px;
 }
 .title {
@@ -50,8 +59,14 @@ box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 4px 2px;
 }
 .name {
   color:#555;
-  font-size: 12px;
+  font-size: 10px;
 }
+.to_whom{
+  color:#555;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
 input, button, textarea, select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -67,4 +82,30 @@ input, button, textarea, select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+.jumbotron{
+  background:url('/photos/top_photo.JPG') ;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+}
+.cover-text {
+	display: table-cell;
+	vertical-align: middle;
+  text-align: center;
+  color: white;
+  width: 100%;
+  margin-top: 50px;
+}
+.cover-text h1{
+  font-size: 6rem;
+
+}
+.my-white{
+  color:#fff;
+}
+.my-gray{
+  color:#808080;
 }

@@ -1,4 +1,6 @@
 class FumansController < ApplicationController
+
+
   def index
     @fuman = Fuman.new
     @fumans = Fuman.all.order("created_at DESC")
@@ -6,5 +8,8 @@ class FumansController < ApplicationController
   def create
     Fuman.create(content:params[:fuman][:content])
     redirect_to :action => 'index'
+  end
+  def top
+    @fuman = Fuman.new
   end
 end
