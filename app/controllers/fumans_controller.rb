@@ -13,11 +13,10 @@ class FumansController < ApplicationController
   def top
     @fuman = Fuman.new
     @user=User.new
-    cookies.signed[:user_id] = { :value => @user.id, :expires => 1.day.from_now }
     @user.save
+    cookies.signed[:user_id] = { :value => @user.id, :expires => 1.day.from_now }
   end
   def like
-
   end
 
 end
