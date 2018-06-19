@@ -4,6 +4,7 @@ class FumansController < ApplicationController
   def index
     @user=User.find_by(id:cookies.signed[:user_id])
     @fumans = Fuman.all.order("created_at DESC")
+    @fuman=Fuman.new
   end
   def create
     Fuman.create(content:params[:fuman][:content])
