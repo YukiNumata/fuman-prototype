@@ -12,7 +12,7 @@
           </div>
         </div>
         <div class=" col-md-3 offset-md-1">
-          <%=link_to" /fumans/fuman.id/likes",{method:"post"} do%>
+          <%=link_to fuman_likes_path(fuman_id:fuman.id),method:"post" do%>
            <i class="far fa-thumbs-up fa-fw faa-wrench animated-hover"></i><%=fuman.like%>
           <%end%>
           <i class="far fa-thumbs-down fa-fw faa-wrench animated-hover"></i><%=fuman.dislike%>
