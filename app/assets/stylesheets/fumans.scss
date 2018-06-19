@@ -51,7 +51,7 @@ box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 4px 2px;
 }
 .title {
   font-size: 4em;
-  color: #fff;
+  color: #ff;
   text-align: center;
   margin-top: 20px;
 }
@@ -95,6 +95,7 @@ input, button, textarea, select {
   position : relative;
   z-index: 1;
   margin-bottom: 0px;
+  min-height: 100vh;
 }
 .row{
   z-index: 2;

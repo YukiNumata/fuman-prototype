@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_17_123331) do
+ActiveRecord::Schema.define(version: 2018_06_19_052111) do
 
   create_table "fumen", force: :cascade do |t|
     t.string "content", null: false
@@ -18,6 +18,20 @@ ActiveRecord::Schema.define(version: 2018_06_17_123331) do
     t.integer "dislike", default: 0
     t.string "name", default: "annonymous"
     t.string "to_whom", default: "World"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "fuman_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fuman_id"], name: "index_likes_on_fuman_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

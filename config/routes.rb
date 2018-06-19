@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   get "/index" => "fumans#index"
 
   resources :fumans do
+    resources :likes do
+    end
   end
+
 end

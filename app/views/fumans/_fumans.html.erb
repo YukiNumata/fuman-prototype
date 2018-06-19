@@ -1,5 +1,4 @@
 
-
 <% @fumans.each do |fuman| %>
   <div class="col-md-6 offset-md-3 col-sm-12">
     <div class="fuman shadow1">
@@ -13,6 +12,7 @@
           </div>
         </div>
         <div class=" col-md-3 offset-md-1">
+          <%=link_to" /fumans/#{@fuman.id}/likes"%>
           <i class="far fa-thumbs-up fa-fw faa-wrench animated-hover"></i><%=fuman.like%>
           <i class="far fa-thumbs-down fa-fw faa-wrench animated-hover"></i><%=fuman.dislike%>
           <i class="fas fa-reply fa-fw faa-bounce animated-hover my-gray fa-lg"></i>
