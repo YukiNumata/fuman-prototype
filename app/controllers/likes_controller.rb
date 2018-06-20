@@ -2,10 +2,12 @@ class LikesController < ApplicationController
   def create
     @user=User.find_by(id:cookies.signed[:user_id])
     unless Like.find_by(user_id:@user.id,fuman_id:params[:fuman_id]).present?
-      @like = Like.create(user_id:@user.id,fuman_id:params[:fuman_id])
-      @fuman=Fuman.find(params[:fuman_id])
-      @fuman.like+=1
-      @fuman.save
+      if Dislike.find_by(user_id:@user.id,fuman_id:params[:fuman_id]).nil?
+        @like = Like.create(user_id:@user.id,fuman_id:params[:fuman_id])
+        @fuman=Fuman.find(params[:fuman_id])
+        @fuman.like+=1
+        @fuman.save
+      end
     else
       @like = Like.find_by(user_id:@user.id,fuman_id:params[:fuman_id])
       @like.destroy

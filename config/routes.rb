@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :fumans do
     resources :likes do
     end
+    resources :dislikes do
+    end
   end
 
 end
