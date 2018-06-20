@@ -1,9 +1,9 @@
 class FumansController < ApplicationController
 
-
   def index
-    @fuman = Fuman.new
+    @user=User.find_by(id:cookies.signed[:user_id])
     @fumans = Fuman.all.order("created_at DESC")
+    @fuman=Fuman.new
   end
   def create
     Fuman.create(content:params[:fuman][:content])
@@ -11,5 +11,11 @@ class FumansController < ApplicationController
   end
   def top
     @fuman = Fuman.new
+    @user=User.new
+    @user.save
+    cookies.signed[:user_id] = { :value => @user.id, :expires => 1.day.from_now }
   end
+  def like
+  end
+
 end

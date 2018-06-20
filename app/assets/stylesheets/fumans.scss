@@ -11,6 +11,7 @@ border:1px solid #c6e2ff;
 box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 4px 2px;
 -webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 4px 2px;
 -moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 4px 2px;
+
 }
 #text {
   border:#c6e2ff 1px solid;
@@ -41,7 +42,7 @@ box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 4px 2px;
 .fuman {
   padding: 10px;
   border:1px solid #c6e2ff;
-  margin:10px 0;
+  margin:20px 0;
   background-color: #fff;
 }
 .input {
@@ -50,7 +51,7 @@ box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 4px 2px;
 }
 .title {
   font-size: 4em;
-  color: #0278AE;
+  color: #fff;
   text-align: center;
   margin-top: 20px;
 }
@@ -83,13 +84,21 @@ input, button, textarea, select {
   -moz-appearance: none;
   appearance: none;
 }
-.jumbotron{
+.jumbotron {
   background:url('/photos/top_photo.JPG') ;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
   text-align: center;
+  background-attachment: fixed;
+  position : relative;
+  z-index: 1;
+  margin-bottom: 0px;
+  min-height: 100vh;
+}
+.row{
+  z-index: 2;
 }
 .cover-text {
 	display: table-cell;
@@ -103,8 +112,17 @@ input, button, textarea, select {
   font-size: 6rem;
 
 }
+.fa-thumbs-up{
+  color: black;
+}
+.icon span{
+  color: black;
+}
 .my-white{
   color:#fff;
+}
+.my-blue{
+  color: #4169e1;
 }
 .my-gray{
   color:#808080;
