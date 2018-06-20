@@ -1,6 +1,5 @@
 class FumansController < ApplicationController
 
-
   def index
     @user=User.find_by(id:cookies.signed[:user_id])
     @fumans = Fuman.all.order("created_at DESC")

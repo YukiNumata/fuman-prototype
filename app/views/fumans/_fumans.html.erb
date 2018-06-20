@@ -12,11 +12,18 @@
           </div>
         </div>
         <div class=" col-md-3 offset-md-1">
+          <div class="icon">
           <%=link_to fuman_likes_path(fuman_id:fuman.id),method:"post" do%>
-           <i class="far fa-thumbs-up fa-fw faa-wrench animated-hover"></i><%=fuman.like%>
+          <%@user=User.find_by(id:cookies.signed[:user_id])%>
+          <%if Like.find_by(user_id:@user.id,fuman_id:fuman.id).present?%>
+           <i class="far fa-thumbs-up fa-fw faa-wrench my-blue animated-hover"></i><span><%=fuman.like%></span>
+           <%else%>
+           <i class="far fa-thumbs-up fa-fw faa-wrench animated-hover"></i><span><%=fuman.like%></span>
+           <%end%>
           <%end%>
-          <i class="far fa-thumbs-down fa-fw faa-wrench animated-hover"></i><%=fuman.dislike%>
+          <i class="far fa-thumbs-down fa-fw faa-wrench animated-hover"></i><span><%=fuman.dislike%></span>
           <i class="fas fa-reply fa-fw faa-bounce animated-hover my-gray fa-lg"></i>
+         </div>
         </div>
         </div>
       </div>
