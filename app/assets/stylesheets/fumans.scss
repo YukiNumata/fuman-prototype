@@ -58,16 +58,21 @@ box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 4px 2px;
 .content {
   color:#0278AE;
 }
-.name {
+.details {
   color:#555;
   font-size: 10px;
+  padding-left: 10px;
 }
-.to_whom{
-  color:#555;
-  font-size: 12px;
-  margin-bottom: 10px;
+.created_ago{
+  padding-right: 3px;
+  padding-left: 5px;
+  margin-right: 10px;
+  border: solid 0.5px #555;/*線*/
+  border-radius: 5px;/*角の丸み*/
 }
-
+.from_name{
+  font-size: 13px;
+}
 input, button, textarea, select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -100,6 +105,9 @@ input, button, textarea, select {
 .row{
   z-index: 2;
 }
+.btn{
+  opacity: 0.8;
+}
 .cover-text {
 	display: table-cell;
 	vertical-align: middle;
@@ -110,13 +118,41 @@ input, button, textarea, select {
 }
 .cover-text h1{
   font-size: 6rem;
-
+}
+.col-md-3 {
+  margin-top: 7px;
+  padding-left: 40px;
+}
+.icon{
+  color: #555;
+  font-weight: bold;
+  color: #555;/*文字色*/
+  background: #FFF;
+  border: solid 1px #555;/*線*/
+  border-radius: 5px;/*角の丸み*/
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 30px;
+  margin-right: 10px;
 }
 .icon a{
-  color: black;
+  color: #555;
+  font-size: 13px;
 }
 .icon span{
-  color: black;
+  color :#555;
+}
+
+.fa-reply{
+  font-size: 13px;
+}
+.fuman_content{
+  text-align: left;
+}
+.fa-user-circle{
+  font-size: 30px;
+  padding-left: 20px;
+  color: #555;
 }
 .my-white{
   color:#fff;

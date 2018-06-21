@@ -1,0 +1,10 @@
+<%if (Time.current.year)-(fuman.created_at.year)>0%>
+  <%= puts (Time.current.year)-(fuman.created_at.year)+"year"%>
+<%elsif (Time.current.month)-(fuman.created_at.month)>0%>
+  <%= puts (Time.current.month)-(fuman.created_at.month)+"month"%>
+<%elsif (Time.current.day)-(fuman.created_at.day)>0%>
+  <%= puts (Time.current.day)-(fuman.created_at.day)+"d"%>
+<%elsif (Time.current.minutes)-(fuman.created_at.minutes)>0%>
+  <%= puts (Time.current.minutes)-(fuman.created_at.minutes)+"m"%>
+<%else%>
+<%= puts "Just now">

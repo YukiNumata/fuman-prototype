@@ -1,37 +1,56 @@
 
 <% @fumans.each do |fuman| %>
-  <div class="col-md-6 offset-md-3 col-sm-12">
-    <div class="fuman shadow1">
-      <div class="row">
-        <div class="col-md-8">
-          <div class="content">
-            <%= fuman.content %>
+<div class="col-md-6 offset-md-3 col-sm-12">
+  <div class="fuman shadow1">
+    <div class="row fuman_top">
+      <div class="col-md-9">
+        <div class="row">
+          <div class="details">
+              <span class="created_ago">
+                <%if Time.current.year-fuman.created_at.year>0 %>
+                  <%= (Time.current.year-fuman.created_at.year).to_s+"year"%>
+                <%elsif Time.current.month-fuman.created_at.month>0 %>
+                  <%= (Time.current.month-fuman.created_at.month).to_s+"month"%>
+                <%elsif (Time.current.day-fuman.created_at.day)>0%>
+                  <%= (Time.current.day-fuman.created_at.day).to_s+"d"%>
+                <%elsif (Time.current.min-fuman.created_at.min)>0 %>
+                  <%= (Time.current.min-fuman.created_at.min).to_s+"m"%>
+                <%else%>
+                 <%= "Just now"%>
+                <%end%>
+              </span>
+             <span class="from_name"><%= fuman.name %></span>
+             <i class="fas fa-angle-double-right fa-fw"></i><%= fuman.to_whom %>
           </div>
-          <div class="name">
-            <%= fuman.name %>
-          </div>
-        </div>
-        <div class=" col-md-3 offset-md-1">
-          <div class="icon">
-          <%@user=User.find_by(id:cookies.signed[:user_id])%>
-          <%=link_to fuman_likes_path(fuman_id:fuman.id),method:"post" do%>
-            <%if Like.find_by(user_id:@user.id,fuman_id:fuman.id).present?%>
-             <i class="far fa-thumbs-up fa-fw faa-wrench my-blue animated-hover"></i><span><%=fuman.like%></span>
-            <%else%>
-             <i class="far fa-thumbs-up fa-fw faa-wrench animated-hover"></i><span><%=fuman.like%></span>
-            <%end%>
-          <%end%>
-          <%=link_to fuman_dislikes_path(fuman_id:fuman.id),method:"post" do%>
-            <%if Dislike.find_by(user_id:@user.id,fuman_id:fuman.id).present?%>
-              <i class="far fa-thumbs-down fa-fw faa-wrench my-blue animated-hover"></i><span><%=fuman.dislike%></span>
-            <%else%>
-              <i class="far fa-thumbs-down fa-fw faa-wrench animated-hover"></i><span><%=fuman.dislike%></span>
-            <%end%>
-          <%end%>
-          <i class="fas fa-reply fa-fw faa-bounce animated-hover my-gray fa-lg"></i>
-         </div>
-        </div>
         </div>
       </div>
-    </div>
+      <div class=" col-md-3 ">
+        <div class="icon">
+        <%@user=User.find_by(id:cookies.signed[:user_id])%>
+        <%=link_to fuman_likes_path(fuman_id:fuman.id),method:"post" do%>
+          <%if Like.find_by(user_id:@user.id,fuman_id:fuman.id).present?%>
+           <i class="far fa-thumbs-up fa-fw faa-wrench my-blue animated-hover"></i><span><%=fuman.like%></span>
+          <%else%>
+           <i class="far fa-thumbs-up fa-fw faa-wrench animated-hover"></i><span><%=fuman.like%></span>
+          <%end%>
+        <%end%>
+        <%=link_to fuman_dislikes_path(fuman_id:fuman.id),method:"post" do%>
+          <%if Dislike.find_by(user_id:@user.id,fuman_id:fuman.id).present?%>
+            <i class="far fa-thumbs-down fa-fw faa-wrench my-blue animated-hover"></i><span><%=fuman.dislike%></span>
+          <%else%>
+            <i class="far fa-thumbs-down fa-fw faa-wrench animated-hover"></i><span><%=fuman.dislike%></span>
+          <%end%>
+        <%end%>
+        <i class="fas fa-reply fa-fw faa-bounce animated-hover my-gray fa-lg"></i>
+        </div>
+       </div>
+     </div>
+     <div class="row fuman_bottom">
+        <i class="fas fa-user-circle"></i>
+        <div class="fuman_content col-md-9">
+         <%=fuman.content%>
+        </div>
+     </div>
+   </div>
+</div>
 <% end %>
