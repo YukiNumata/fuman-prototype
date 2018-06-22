@@ -1,8 +1,17 @@
 class FumansController < ApplicationController
+  def sort_by_popularity
 
+  end
   def index
     @user=User.find_by(id:cookies.signed[:user_id])
-    @fumans = Fuman.all.order("created_at DESC")
+    @like=Like.find_by(user_id:@user)
+    if params[:sort_id].to_i==2
+     @fumans = Fuman.where(id:@like.fuman_id).order("created_at DESC")
+   elsif params[:sort_id].to_i==1
+     @fumans = Fuman.all.order(like: :desc)
+    else
+     @fumans = Fuman.all.order("created_at DESC")
+    end
     @fuman=Fuman.new
   end
   def create

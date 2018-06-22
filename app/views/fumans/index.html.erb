@@ -15,8 +15,24 @@
       </div>
       <div class="col-md-6 offset-md-3 input col-sm-12">
           <%= f.text_area :content, id:"text",placeholder:"Your wish & request.",value:"" %>
-          <%= f.submit "投稿", class:"btn btn-primary btn-sm",style:"display:hidden;width:100%;background-color:#0278AE;margin-top:10px;" %>
-        <% end %>
+          <div class="row">
+           <%= f.submit "Share", class:"btn btn-primary btn-sm col-md-2 offset-md-5",style:"display:hidden;width:100%;background-color:#0278AE;margin-top:10px;" %>
+          </div>
+      <% end %>
+        <div class="row">
+          <div class="dropdown offset-md-9 col-md-3">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <%="Sort by"%>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+              <li class="dropdown-header">Sort by</li>
+              <li><%=link_to "Latest", index_path(sort_id:0) %></li>
+              <li><%=link_to "Popularity", index_path(sort_id:1)%></li>
+              <li><%=link_to "Favorite", index_path(sort_id:2)%></li>
+            </ul>
+            </div>
+        </div>
       </div>
       <%= render 'fumans' %>
     </div>
